@@ -1,0 +1,53 @@
+[project]
+name = "resilient-channels"
+version = "0.1.0"
+description = "Adaptive multi-channel router for West Africa"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "strawberry-graphql[fastapi]",
+    "aiokafka",
+    "redis[hiredis]",
+    "pydantic>=2.0",
+    "pydantic-settings",
+    "structlog",
+    "httpx",
+    "prometheus-client",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "fakeredis[json]",
+    "ruff",
+    "mypy",
+]
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "fakeredis[json]>=2.34.1",
+    "mypy>=1.19.1",
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
+    "ruff>=0.15.6",
+]
