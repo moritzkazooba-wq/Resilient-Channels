@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ruff *)",
+      "Bash(mypy *)",
+      "Bash(pytest *)",
+      "Bash(pip *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(docker-compose *)",
+      "Bash(docker *)",
+      "Bash(cd *)",
+      "Bash(cat *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(curl *)",
+      "Bash(python *)",
+      "Bash(git *)",
+      "Bash(wc *)",
+      "Bash(timeout *)",
+      "Bash(kill *)",
+      "Edit(*)",
+      "Write(*)",
+      "Read(*)"
+    ]
+  }
+}
